@@ -62,9 +62,15 @@ public class PosAvg {
 		stIDs = newStIds; // Updates the reference of the stationId array to the newStationId array.
 	}
 	
+	// Method to find the index of the station in the file.
 	public int indexOfStation() {
 		int index = 0;
-		
+		// For loop to compare the station Id to all the station Ids in the array. 
+		for(int i = 0; i < stIDs.length; ++i) {
+			if(stIDs[i].equals(STiD)) {
+				index = i + 1; // Adds 1 to the index because the array index starts from 0. 
+			} 
+		}
 		return index;
 	}
 	
@@ -72,4 +78,6 @@ public class PosAvg {
 	public String getSTiD() {
 		return STiD;
 	}
+	
+	
 }
