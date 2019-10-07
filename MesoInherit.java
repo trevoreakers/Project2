@@ -10,7 +10,7 @@ public class MesoInherit extends MesoAbstract {
 	
 	private int numStIds = 0; // Creates a variable to hold the number of stIds in the array.
 	
-	private String [] stIDs = new String[capacity]; // Creates an array to hold the stIds with size of capacity.v
+	private String [] stIDs = new String[capacity]; // Creates an array to hold the stIds with size of capacity.
 		
 	// Constructor. Gets the stID from the object passed from MesoStation.
 	public MesoInherit(MesoStation meso) {
@@ -61,6 +61,16 @@ public class MesoInherit extends MesoAbstract {
 	    } 
 			
 		stIDs = newStIds; // Updates the reference of the stationId array to the newStationId array.
+	}
+	
+	public int [] calAverage() {
+		int [] number = new int[5];
+		return number;
+	}
+	
+	public char letterAverage() {
+		char letter = 'A';
+		return letter;
 	}
 	
 	// Getter method for the stId.
