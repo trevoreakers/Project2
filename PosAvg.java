@@ -1,4 +1,4 @@
 
-public abstract class PosAvg extends MesoInherit {
+public class PosAvg {
 	
 }
