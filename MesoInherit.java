@@ -67,4 +67,9 @@ public class MesoInherit extends MesoAbstract {
 	public String getId() {
 		return stId;
 	}
+	
+	// Getter method for the stIDs array.
+	public String [] getStIds() {
+		return stIDs;
+	}
 }
