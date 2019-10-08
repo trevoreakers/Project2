@@ -99,16 +99,18 @@ public class PosAvg {
 		word2SecondAvg = stIDs[word4];
 	}
 	
-	// ToString method that overrides object toString.
-	@Override
-	public String toString() {
-		return String.format("This index is average of %s and %s, %s and %s, and so on.", word1FirstAvg, word2FirstAvg, word1SecondAvg, word2SecondAvg);
-	}
-	
 	// Getter method for the stationId. 
 	public String getSTiD() {
 		return STiD;
 	}
 	
+	public String [] getStIDs() {
+		return stIDs;
+	}
 	
+	// ToString method that overrides object toString.
+	@Override
+	public String toString() {
+		return String.format("This index is average of %s and %s, %s and %s, and so on.", word1FirstAvg, word2FirstAvg, word1SecondAvg, word2SecondAvg);
+	}
 }
