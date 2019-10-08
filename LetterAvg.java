@@ -54,10 +54,11 @@ public class LetterAvg {
 	// toString method that overrides the object toString. 
 	public String toString() {
 		stationIDS();
-		System.out.println("\nThey are:");
+		String firstOutput = ("\nThey are:");
+		String secondOutput = "";
 		for(int i = 0; i < stations.size(); ++i) {
-			System.out.println(stations.get(i));
+			secondOutput += ("\n" + stations.get(i));
 		}
-		return "";
+		return String.format(firstOutput + secondOutput);
 	}
 }
