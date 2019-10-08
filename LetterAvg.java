@@ -5,6 +5,8 @@ public class LetterAvg {
 	
 	private String STID; // Holds the station from PosAvg.
 	
+	private int numberOfStations; // Holds the number of stations that start with the letterAverage. 
+	
 	// Constructor for Driver.
 	public LetterAvg(char character) {
 		this.letterAverage = character;
@@ -15,7 +17,17 @@ public class LetterAvg {
 		this.STID = station;
 	}
 	
-	
+	// Method to calculate the number of stations that start with the letter average.
+	public int numberOfStationWithLetterAvg() {
+		PosAvg obj = new PosAvg(STID);
+		String [] array = obj.getStIDs();
+		for(int i = 0; i < array.length; ++i) {
+			if(array[i].charAt(0) == (letterAverage)) {
+				++ numberOfStations;
+			}
+		}
+		return numberOfStations;
+	}
 	// Getter method for the letterAvg.
 	public char getLetterAverag() {
 		return letterAverage;
