@@ -28,9 +28,14 @@ public class LetterAvg {
 		}
 		return numberOfStations;
 	}
+	
 	// Getter method for the letterAvg.
 	public char getLetterAverag() {
 		return letterAverage;
 	}
 	
+	// toString method that overrides the object toString. 
+	public String toString() {
+		return "\nThey are:";
+	}
 }
