@@ -80,10 +80,29 @@ public class PosAvg {
 				index = i + 1; // Adds 1 to the index because the array index starts from 0. 
 			} 
 		}
+		averageWords();
 		return index;
 	}
 	
-	// Method 
+	// Method to find the average words for the index of the station ID.
+	public void averageWords() {
+		int arrayIndex = index - 1;
+		int word1 = arrayIndex - 1;
+		int word2 = arrayIndex + 1;
+		int word3 = arrayIndex - 2;
+		int word4 = arrayIndex + 2;
+		
+		word1FirstAvg = stIDs[word1];
+		word2FirstAvg = stIDs[word2];
+		word1SecondAvg = stIDs[word3];
+		word2SecondAvg = stIDs[word4];
+	}
+	
+	// ToString method that overrides object toString.
+	@Override
+	public String toString() {
+		return String.format("This index is average of %s and %s, %s and %s, and so on.", word1FirstAvg, word2FirstAvg, word1SecondAvg, word2SecondAvg);
+	}
 	
 	// Getter method for the stationId. 
 	public String getSTiD() {
