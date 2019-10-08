@@ -31,6 +31,7 @@ public class PosAvg {
 		} catch (IOException e) {
 			e.getMessage();
 		}
+		LetterAvg letter = new LetterAvg(station);
 	}
 	
 	// Method to read in the station Ids from Mesonet and add them into an array.
