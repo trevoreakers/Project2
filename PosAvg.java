@@ -12,6 +12,16 @@ public class PosAvg {
 	
 	private String [] stIDs = new String[capacity]; // Creates an array to hold the stIds with size of capacity.
 	
+	private int index; // Creates a variable to hold the index of the stationID.
+	
+	private String word1FirstAvg; // Holds the first word in the first average.
+	
+	private String word2FirstAvg; // Holds the second word in the first average.
+	
+	private String word1SecondAvg; // Holds the first word in the second average.
+	
+	private String word2SecondAvg; // Hold sthe second word in the second average.
+	
 	// ConStructor.
 	public PosAvg(String station) {
 		this.STiD = station;
@@ -64,7 +74,6 @@ public class PosAvg {
 	
 	// Method to find the index of the station in the file.
 	public int indexOfStation() {
-		int index = 0;
 		// For loop to compare the station Id to all the station Ids in the array. 
 		for(int i = 0; i < stIDs.length; ++i) {
 			if(stIDs[i].equals(STiD)) {
@@ -73,6 +82,8 @@ public class PosAvg {
 		}
 		return index;
 	}
+	
+	// Method 
 	
 	// Getter method for the stationId. 
 	public String getSTiD() {
