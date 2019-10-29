@@ -4,6 +4,8 @@ import java.io.IOException; // Imports IOException class.
 
 public class PosAvg {
 
+	private static final int LINES_OF_TEXT_SKIPPED = 2;
+
 	private String STiD; // Creates a variable to hold the stationId passed in through the constructor. 
 	
 	private int capacity = 15; // Creates a variable to set the capacity of the array that holds the stIds.
@@ -31,30 +33,29 @@ public class PosAvg {
 		} catch (IOException e) {
 			e.getMessage();
 		}
-		LetterAvg letter = new LetterAvg(station);
+		
 	}
 	
 	// Method to read in the station Ids from Mesonet and add them into an array.
 	public void readFile(String filename) throws IOException {
 		BufferedReader br = new BufferedReader(new FileReader(filename));
 		String stationId = "";
-		String newStationId = "";
 			
 		// Gets rid of the first 3 lines of data.
 		String lineOfData = br.readLine();
-		for(int i = 0; i < 2; ++i) {
+		for(int i = 0; i < LINES_OF_TEXT_SKIPPED; ++i) {
 			lineOfData = br.readLine();
 		}
 			
 		lineOfData = br.readLine(); // Reads the first line of data that we need to use. 
 		// Reads in the stIds from the Mesonet.txt file and adds them to the stIDs array expanding if needed.
 		while(lineOfData != null) {
-			stationId = lineOfData.substring(0,5);
-			newStationId = stationId.trim();
+			lineOfData = lineOfData.trim();
+			stationId = lineOfData.substring(0,4);
 			if(numStIds == capacity) {
 				expandStIds();
 			}
-			stIDs[numStIds] = newStationId;
+			stIDs[numStIds] = stationId;
 			++ numStIds;
 			lineOfData = br.readLine();
 		}
