@@ -4,6 +4,8 @@ import java.io.IOException; // Imports IOException class.
 
 public class PosAvg {
 
+	private static final int CAPACITY_DOUBLER = 2;
+
 	private static final int LINES_OF_TEXT_SKIPPED = 2;
 
 	private String STiD; // Creates a variable to hold the stationId passed in through the constructor. 
@@ -50,7 +52,7 @@ public class PosAvg {
 		lineOfData = br.readLine(); // Reads the first line of data that we need to use. 
 		// Reads in the stIds from the Mesonet.txt file and adds them to the stIDs array expanding if needed.
 		while(lineOfData != null) {
-			lineOfData = lineOfData.trim();
+			lineOfData = lineOfData.trim(); // Trims the lineOfData
 			stationId = lineOfData.substring(0,4);
 			if(numStIds == capacity) {
 				expandStIds();
@@ -64,7 +66,7 @@ public class PosAvg {
 		
 	// Expands the size of the stationIds array to fit more station Ids in it. 
 	private void expandStIds() {
-		this.capacity *= 2; // Doubles the capacity of the array.
+		this.capacity *= CAPACITY_DOUBLER; // Doubles the capacity of the array.
 		String[] newStIds = new String[capacity]; // Creates the newStationIds array.
 		// Copies the stationIds array into the newStationIds array.
 		for (int i = 0; i < this.stIDs.length; i++) {
