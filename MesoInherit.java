@@ -1,6 +1,10 @@
 
 public class MesoInherit extends MesoAbstract {
 	
+	private static final double AVERAGE_FACTOR = 0.5;
+
+	private static final int ASCII_SIZE = 3;
+
 	private String stId; // Creates a variable to hold the stID from MesoStation. 
 	
 	private double asciiAverage; // Creates a variable to hold the average ascii value.
@@ -14,7 +18,7 @@ public class MesoInherit extends MesoAbstract {
 	
 	// Method to find the ceiling, floor, and average of the station IDs in ascii form. 
 	protected int [] calAverage() {
-		int [] ascii = new int[3];
+		int [] ascii = new int[ASCII_SIZE];
 		int asciiValue = 0; 
 		for(int i = 0; i < stId.length(); ++i) {
 			asciiValue += stId.charAt(i);
@@ -22,10 +26,10 @@ public class MesoInherit extends MesoAbstract {
 		asciiAverage = (double) asciiValue / stId.length();
 		ascii[0] = (int) Math.ceil(asciiAverage);
 		ascii[1] = (int) Math.floor(asciiAverage);
-		if(asciiAverage < 0.5) {
+		if(asciiAverage < AVERAGE_FACTOR) {
 			ascii[2] = ascii[1];
 			asciiAverage = (int) Math.floor(asciiAverage);
-		} else if (asciiAverage >= 0.5) {
+		} else if (asciiAverage >= AVERAGE_FACTOR) {
 			ascii[2] = ascii[0];
 			asciiAverage = (int) Math.ceil(asciiAverage);
 		}
